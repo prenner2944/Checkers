@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale: 1">
+    <title>CGT 353 - Project 02</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/checkers.css">
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="images/favicon.png"/>
+</head>
+<body>
+
+<!--Header with nav bar-->
+<header>
+    <div class="page-stretch">
+        <div class="header-flex">
+            <div class="flex-title">
+                <h2 class="subtitle">The fundamentals of</h2>
+                <div class="header-title">Checkers</div>
+            </div>
+            <div class="flex-nav">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="basics.html">Basics</a></li>
+                        <li><a href="strategy.html">Strategy</a></li>
+                        <li><a href="history.html">History</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="page-content" class="page-stretch">
+	<h1>Welcome</h1>
+	<p>Welcome to the Fundamentals of Checkers! Here you can find basic rules, strategies, and a brief history of this marvelous game! We even have animated game boards to help you learn the ropes. Below you can see one of our game boards showing a famous match between Marion Tinsley (USA) v. Derek Oldbury (England). Oldbury (White) forces Tinsley (black) to resign with a <b>triple</b> jump on the last move!</p>
+
+	<!--Inserts full checker match-->
+	<div id="big-match" class="demo-board"></div>
+</div>
+
+<div class="footer">
+    <p class="f">Coded and designed by Aaron Eads, Tyler Simon, and Paul Renner.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="data/match.js"></script>
+<script src="checkers.js"></script>
+
+<!--Checkers game scripting-->
+<script>
+    $(function () {
+        let pieces = [];
+        for (let i = 0; i < bigMatch.black.length; i++) {
+            let b = bigMatch.black[i];
+            let w = bigMatch.white[i];
+
+            pieces.push(new Gamepiece(b.position, b.movements, 'black'));
+            pieces.push(new Gamepiece(w.position, w.movements, 'white'));
+        }
+
+        const board = new Gameboard(pieces);
+        $('#big-match').append(board.html);
+    });
+</script>
+</body>
+</html>

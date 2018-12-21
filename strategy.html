@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale: 1">
+    <title>CGT 353 - Project 02</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/checkers.css">
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="images/favicon.png"/>
+</head>
+<body>
+
+<!--Header with nav bar-->
+<header>
+    <div class="page-stretch">
+        <div class="header-flex">
+            <div class="flex-title">
+                <h2 class="subtitle">The fundamentals of</h2>
+                <div class="header-title">Checkers</div>
+            </div>
+            <div class="flex-nav">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="basics.html">Basics</a></li>
+                        <li><a href="strategy.html">Strategy</a></li>
+                        <li><a href="history.html">History</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--Floating side menu-->
+<nav class="floatingMenu">
+	<h3>Strategies</h3>
+	
+	<ul>
+		<li><a href="#central">Central Control</a></li>
+		<li><a href="#d-line">D-Line Diagonal</a></li>
+		<li><a href="#a-line">A-Line Diagonal</a></li>
+		<li><a href="#b-line">B-Line Diagonal</a></li>
+		<li><a href="#c-line">C-Line Diagonal</a></li>
+		<li><a href="#e-line">E-Line Diagonal</a></li>
+		<li><a href="#f-line">F-Line Diagonal</a></li>
+		<li><a href="#g-line-offense">G-Line Offensive Diagonal</a></li>
+		<li><a href="#g-line-defense">G-Line Defensive Diagonal</a></li>
+		<li><a href="basics.html">Back to Top</a></li>
+	</ul>
+</nav>
+
+<div id="page-content" class="page-stretch">
+    <h1>Strategy</h1>
+	
+	<!--Accordion menu that only shows when screen size is smaller-->
+	<button class="accordion">Strategies</button>
+	<div class="panel">
+		<ul>
+			<li><a href="#central">Central Control</a></li>
+			<li><a href="#d-line">D-Line Diagonal</a></li>
+			<li><a href="#a-line">A-Line Diagonal</a></li>
+			<li><a href="#b-line">B-Line Diagonal</a></li>
+			<li><a href="#c-line">C-Line Diagonal</a></li>
+			<li><a href="#e-line">E-Line Diagonal</a></li>
+			<li><a href="#f-line">F-Line Diagonal</a></li>
+			<li><a href="#g-line-offense">G-Line Offensive Diagonal</a></li>
+			<li><a href="#g-line-defense">G-Line Defensive Diagonal</a></li>
+		</ul>
+	</div>	
+
+    <div class="demo">
+        <div class="demo-text">
+            <h2 id="central">Central control</h2>
+            <p>It is important to gain control of the center of the board. From the center, there are fewer spaces
+                between your pieces and anywhere else on the board. Secondly, you can cut off enemy pieces from each
+                other.</p>
+        </div>
+        <div id="demo-center" class="demo-board"></div>
+    </div>
+	<div class="demo">
+        <div class="demo-text">
+            <h2 id="d-line">D-Line Diagonal</h2>
+            <p>Diagonals are a great way to separate the board in order to initiate and build strategies. The D-Line diagonal is the most basic diagonal and it splits the board in half.</p>
+			<p>The following example is an example of shared control. Both players are on their own side. Crossing this diagonal would be pushing for an attack, while staying in control of the diagonal gives a player an advantage</p>
+        </div>
+        <div id="demo-D" class="demo-board"></div>
+    </div>
+	<div class="demo">
+        <div class="demo-text">
+            <h2 id="a-line">A-Line Diagonal</h2>
+            <p>The A-line is a line of attack and aggressiveness. A player is fully on the offensive with control of the A-Line. Reinforcement of the base of this line is vital to preventing counterattacks.</p>
+        </div>
+        <div id="demo-A" class="demo-board"></div>
+    </div>
+	<div class="demo">
+        <div class="demo-text">
+            <h2 id="b-line">B-Line Diagonal</h2>
+            <p>This is a weaker line as it involves using the areas of the board that you want to avoid. The square that intersects the B-Line and the D-Line is a dangerous spot on the board to lose as it allows them to bypass your A-Line. This spot is currently occupied by the black piece.</p>
+        </div>
+        <div id="demo-B" class="demo-board"></div>
+    </div>
+	<div class="demo">
+        <div class="demo-text">
+            <h2 id="c-line">C-Line Diagonal</h2>
+            <p>This line is stronger than the B-Line as it directly intersects the A-Line. This intersection space is extremely useful for attacking and counterattacking and is currently the frontmost space being utilized by the white team.</p>
+        </div>
+        <div id="demo-C" class="demo-board"></div>
+    </div>
+	<div class="demo">
+        <div class="demo-text">
+            <h2 id="e-line">E-Line Diagonal</h2>
+            <p>This is a defensive line that is used to support the D-Line from incoming attacks from your opponent.</p>
+        </div>
+        <div id="demo-E" class="demo-board"></div>
+    </div>
+	<div class="demo">
+        <div class="demo-text">
+            <h2 id="f-line">F-Line Diagonal</h2>
+            <p>This line is another defensive line that is used to support the D-Line. Rather than preventing opponents from jumping over the D-Line, this line allows the opponent to jump over the D-Line. The pieces on the F-Line can then jump the attacking pieces.</p>
+        </div>
+        <div id="demo-F" class="demo-board"></div>
+    </div>
+	<div class="demo">
+        <div class="demo-text">
+            <h2 id="g-line-offense">G-Line Diagonal Offensive</h2>
+            <p>The G-Line is actually your opponent's A-Line! Having control of this diagonal can stifle any attacks that your opponent attempts. The following is the best possible formation for an attack on the G-Line.</p>
+        </div>
+        <div id="demo-G-First" class="demo-board"></div>
+    </div>
+	<div class="demo">
+        <div class="demo-text">
+			<h2 id="g-line-defense">G-Line Diagonal Defensive</h2>
+            <p>An alternative use for the G-Line is to occupy it during the very early game to take a strong defensive approach from the start.</p>
+        </div>
+        <div id="demo-G-Second" class="demo-board"></div>
+    </div>
+</div>
+<div class="footer">
+    <p class="f">Coded and designed by Aaron Eads, Tyler Simon, and Paul Renner.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="checkers.js"></script>
+
+<!--Creates checkerboard and animates pieces-->
+<script>
+    $(function () {
+        const board1 = new Gameboard([
+            new Gamepiece(15, [], 'white'),
+            new Gamepiece(19, [], 'white'),
+            new Gamepiece(18, [], 'white'),
+            new Gamepiece(23, [], 'white'),
+            new Gamepiece(14, [], 'white'),
+            new Gamepiece(12, [], 'white'),
+            new Gamepiece(5, [], 'black'),
+            new Gamepiece(21, [], 'black'),
+            new Gamepiece(27, [], 'black'),
+            new Gamepiece(8, [], 'black')
+        ]);
+		
+		const board2 = new Gameboard([
+            new Gamepiece(31, [], 'white'),
+            new Gamepiece(30, [], 'white'),
+            new Gamepiece(26, [], 'white'),
+            new Gamepiece(23, [], 'white'),
+            new Gamepiece(19, [], 'white'),
+            new Gamepiece(14, [], 'black'),
+            new Gamepiece(10, [], 'black'),
+            new Gamepiece(7, [], 'black'),
+            new Gamepiece(3, [], 'black'),
+            new Gamepiece(2, [], 'black')
+        ]);
+		
+		const board3 = new Gameboard([
+            new Gamepiece(32, [], 'white'),
+            new Gamepiece(31, [], 'white'),
+            new Gamepiece(27, [], 'white'),
+            new Gamepiece(23, [], 'white'),
+            new Gamepiece(18, [], 'white'),
+            new Gamepiece(14, [], 'white'),
+        ]);
+		
+		const board4 = new Gameboard([
+            new Gamepiece(32, [], 'white'),
+            new Gamepiece(31, [], 'white'),
+            new Gamepiece(27, [], 'white'),
+            new Gamepiece(23, [], 'white'),
+            new Gamepiece(18, [], 'white'),
+            new Gamepiece(14, [], 'white'),
+			new Gamepiece(22, [], 'black'),
+			new Gamepiece(17, [], 'black'),
+        ]);
+		
+		const board5 = new Gameboard([
+            new Gamepiece(14, [], 'white'),
+            new Gamepiece(17, [], 'white'),
+			new Gamepiece(18, [], 'white'),
+            new Gamepiece(21, [], 'white'),
+            new Gamepiece(25, [], 'white'),
+            new Gamepiece(30, [], 'white'),
+            new Gamepiece(5, [], 'black'),
+			new Gamepiece(9, [], 'black'),
+			new Gamepiece(6, [], 'black'),
+			new Gamepiece(10, [], 'black'),
+			new Gamepiece(1, [], 'black'),
+			new Gamepiece(2, [], 'black'),
+			new Gamepiece(3, [], 'black'),
+        ]);
+		const board6 = new Gameboard([
+            new Gamepiece(15, [], 'white'),
+			new Gamepiece(18, [], 'white'),
+            new Gamepiece(22, [], 'white'),
+            new Gamepiece(25, [], 'white'),
+            new Gamepiece(30, [], 'white'),
+			new Gamepiece(26, [], 'white'),
+			new Gamepiece(23, [], 'white'),
+			new Gamepiece(19, [], 'white'),
+			new Gamepiece(16, [], 'white'),
+            new Gamepiece(1, [], 'black'),
+			new Gamepiece(2, [], 'black'),
+			new Gamepiece(3, [], 'black'),
+			new Gamepiece(4, [], 'black'),
+			new Gamepiece(5, [], 'black'),
+			new Gamepiece(6, [], 'black'),
+			new Gamepiece(9, [], 'black'),
+			new Gamepiece(10, [], 'black'),		
+        ]);
+		
+		const board7 = new Gameboard([
+            new Gamepiece(15, [], 'white'),
+			new Gamepiece(18, [], 'white'),
+            new Gamepiece(22, [], 'white'),
+            new Gamepiece(25, [], 'white'),
+            new Gamepiece(30, [], 'white'),
+			new Gamepiece(31, [], 'white'),
+			new Gamepiece(27, [], 'white'),
+			new Gamepiece(24, [], 'white'),
+			new Gamepiece(32, [], 'white'),
+			new Gamepiece(28, [], 'white'),
+			new Gamepiece(20, [], 'white'),
+            new Gamepiece(1, [], 'black'),
+			new Gamepiece(2, [], 'black'),
+			new Gamepiece(3, [], 'black'),
+			new Gamepiece(4, [], 'black'),
+			new Gamepiece(5, [], 'black'),
+			new Gamepiece(6, [], 'black'),
+			new Gamepiece(9, [], 'black'),
+			new Gamepiece(10, [], 'black'),
+			new Gamepiece(14, [], 'black'),
+			new Gamepiece(17, [], 'black'),				
+        ]);
+		
+		const board8 = new Gameboard([
+            new Gamepiece(32, [], 'white'),
+			new Gamepiece(31, [], 'white'),
+            new Gamepiece(28, [], 'white'),
+            new Gamepiece(27, [], 'white'),
+            new Gamepiece(24, [], 'white'),
+			new Gamepiece(23, [], 'white'),
+			new Gamepiece(27, [], 'white'),
+			new Gamepiece(18, [], 'white'),
+			new Gamepiece(14, [], 'white'),			
+        ]);
+		
+		const board9 = new Gameboard([
+            new Gamepiece(32, [], 'white'),
+			new Gamepiece(31, [], 'white'),
+            new Gamepiece(30, [], 'white'),
+            new Gamepiece(29, [], 'white'),
+            new Gamepiece(27, [], 'white'),
+			new Gamepiece(26, [], 'white'),
+			new Gamepiece(25, [], 'white'),
+			new Gamepiece(24, [], 'white'),
+			new Gamepiece(23, [], 'white'),
+			new Gamepiece(22, [], 'white'),
+			new Gamepiece(21, [], 'white'),
+			new Gamepiece(19, [], 'white'),
+            new Gamepiece(1, [], 'black'),
+			new Gamepiece(2, [], 'black'),
+			new Gamepiece(3, [], 'black'),
+			new Gamepiece(4, [], 'black'),
+			new Gamepiece(5, [], 'black'),
+			new Gamepiece(6, [], 'black'),
+			new Gamepiece(7, [], 'black'),
+			new Gamepiece(8, [], 'black'),
+			new Gamepiece(9, [], 'black'),
+			new Gamepiece(10, [], 'black'),
+			new Gamepiece(12, [], 'black'),
+			new Gamepiece(15, [], 'black'),				
+        ]);
+
+        $('#demo-center').append(board1.html);
+		$('#demo-D').append(board2.html);
+		$('#demo-A').append(board3.html);
+		$('#demo-B').append(board4.html);
+		$('#demo-C').append(board5.html);
+		$('#demo-E').append(board6.html);
+		$('#demo-F').append(board7.html);
+		$('#demo-G-First').append(board8.html);
+		$('#demo-G-Second').append(board9.html);
+    });
+</script>
+
+<!--Button functionality for accordion menu-->
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+			panel.style.display = "block";
+		}
+    });
+}
+</script>
+
+</body>
+</html>

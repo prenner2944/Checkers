@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+    color: inherit;
+}
+
+body {
+    font: 16px 'Open Sans', sans-serif;
+    color: #123;
+	background-color: #D3D3D3;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    line-height: 100%;
+}
+
+h1 {
+    font-size: 72px;
+    margin-bottom: 96px;
+    text-align: center;
+    border-bottom: 4px dotted #ddd;
+    padding-bottom: 75px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+h3 {
+	font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 150%;
+    margin-bottom: 48px;
+}
+
+b {
+    font-weight: bold;
+}
+
+.page-stretch {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    background: #256;
+    color: white;
+    user-select: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+header .page-stretch {
+    padding: 48px 24px;
+}
+
+header .header-title {
+    text-transform: uppercase;
+    font-size: 72px;
+    line-height: 90%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+.subtitle {
+    margin-bottom: 0;
+    line-height: 100%;
+    padding-left: 52px;
+}
+
+.header-flex {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.flex-title {
+    flex: 1 0 320px;
+    margin-right: 48px;
+}
+
+.flex-nav {
+    flex: 0 1 auto;
+    margin-top: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    max-width: 400px;
+}
+
+nav ul li, .panel ul li {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 0 10px;
+}
+
+nav ul li a, .panel ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+	border-radius: 2px;
+    padding: 5px 1px;
+	-webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -ms-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;
+}
+
+nav ul li a:hover, .panel ul li a:hover {
+    background-color: white;
+    color: #256;
+}
+
+.accordion {
+	width: 100%;
+	cursor: pointer;
+	text-align: center;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+.panel {
+	width: 100%;
+    padding: 0 18px;
+    display: none;
+    background-color: #256;
+	color: white;
+	margin-bottom: 50px;
+	text-align: center;
+	list-style: none;
+}
+
+.panel ul {
+	list-style: none;
+}
+
+#page-content {
+    margin-top: 25px;
+    padding: 24px;
+	background-color: #ffffff;
+	margin-bottom: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2)
+}
+
+.demo {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 96px;
+}
+
+.demo-text {
+    flex: 1 1 320px;
+    margin-right: 48px;
+    margin-bottom: 48px;
+}
+
+.demo-board {
+    flex: 0 0 auto;
+}
+
+.demo-board .gameboard {
+    margin: 0 auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2)
+}
+
+.footer {
+    position: relative;
+    background-color: #256;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    bottom: 0;
+    overflow: hidden;
+    
+}
+.f {
+    color: white;
+}
+
+#big-match {
+	margin: auto;
+}
+
+.floatingMenu {
+    background: #256;
+	color: white;
+    padding: 5px;
+    width: 15%;
+    z-index: 100;
+    position: fixed;
+	text-align: center;
+	margin-left: 18px;
+	border: 3px solid white;
+}
+
+.floatingMenu a, .floatingMenu ul, .panel a, .panel ul {
+    display: block;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 576px) {
+	.floatingMenu {
+		display: none;
+	}
+	.accordion {
+		display: block;
+	}
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {	
+	.floatingMenu {
+		display: none;
+	}
+	.accordion {
+		display: block;
+	}
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	.floatingMenu {
+		display: none;
+	}
+	.accordion {
+		display: block;
+	}
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {	
+	.floatingMenu {
+		display: none;
+	}
+	.accordion {
+		display: block;
+	}
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	.floatingMenu {
+		display: block;
+	}
+	.accordion, .panel {
+		display: none;
+	}
+}

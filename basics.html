@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale: 1">
+    <title>CGT 353 - Project 02</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/checkers.css">
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="images/favicon.png"/>
+</head>
+<body>
+
+<!--Header with nav bar-->
+<header>
+    <div class="page-stretch">
+        <div class="header-flex">
+            <div class="flex-title">
+                <h2 class="subtitle">The fundamentals of</h2>
+                <div class="header-title">Checkers</div>
+            </div>
+            <div class="flex-nav">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="basics.html">Basics</a></li>
+                        <li><a href="strategy.html">Strategy</a></li>
+                        <li><a href="history.html">History</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--Floating side menu-->
+<nav class="floatingMenu">
+	<h3>Rules and Basics</h3>
+	
+	<ul>
+		<li><a href="#movement">Movement</a></li>
+		<li><a href="#capture">Capturing</a></li>
+		<li><a href="#jumpCapture">Capturing (Jump)</a></li>
+		<li><a href="#kings">Kings</a></li>
+		<li><a href="basics.html">Back to Top</a></li>
+	</ul>
+</nav>
+
+<div id="page-content" class="page-stretch">
+    <h1>The Basics</h1>
+	
+	<!--Accordion menu that appears when screen size is smaller-->
+	<button class="accordion">Rules and Basics</button>
+	<div class="panel">
+		<ul>
+			<li><a href="#movement">Movement</a></li>
+			<li><a href="#capture">Capturing</a></li>
+			<li><a href="#jumpCapture">Capturing (Jump)</a></li>
+			<li><a href="#kings">Kings</a></li>
+		</ul>
+	</div>	
+
+    <div class="demo">
+        <div class="demo-text">
+            <h2 id="movement">Movement</h2>
+            <p>The player is allowed to move one piece per turn. A piece can be moved diagonally one space, either to an
+                open space on its left or its right. The player <b>cannot</b> move a piece backwards (i.e. towards
+                himself), unless the piece is a king.
+            </p>
+        </div>
+        <div id="demo-movement" class="demo-board"></div>
+    </div>
+    <div class="demo">
+        <div class="demo-text">
+            <h2 id="capture">Capturing</h2>
+            <p>If an opponent's piece occupies the left or right diagonal of a player's piece, and there is an open
+                space behind the opponent such that the player could move his piece in a straight line over the opponent
+                to the open space, then the player may capture the opponent's piece. The player's piece remains behind
+                the captured piece.</p>
+        </div>
+        <div id="demo-capture" class="demo-board"></div>
+    </div>
+    <div class="demo">
+        <div class="demo-text">
+            <h2 id="jumpCapture">Capturing (Jump)</h2>
+            <p>After the player has captured an opponent piece, if he is in position to perform another capture, then he
+                may do so. The player may continue to capture pieces as long as he is able to make consecutive
+                jumps.</p>
+			<h2 id="kings">Kings</h2>
+			<p>If a player's piece reaches the side of the board opposite of them, then that piece becomes a King. The piece that is performing consecutive jumps in this example would therefore become a King. Kings are able to move forwards <b>and</b> backwards!</p>
+        </div>
+        <div id="demo-jump" class="demo-board"></div>
+    </div>
+</div>
+<div class="footer">
+    <p class="f">Coded and designed by Aaron Eads, Tyler Simon, and Paul Renner.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="checkers.js"></script>
+
+<!--Creates checkerboards and animates pieces-->
+<script>
+    $(function () {
+        const board1 = new Gameboard(Gamepiece.fullBoard(1, [22]).concat([
+            new Gamepiece(22, [18], 'white')
+        ]));
+
+        const board2 = new Gameboard(Gamepiece.fullBoard(0, [11, 22]).concat([
+            new Gamepiece(18, [11], 'white'),
+            new Gamepiece(15, [-1], 'black')
+        ]));
+
+        const board3 = new Gameboard(Gamepiece.fullBoard(0, [2, 6, 7, 9, 11, 22, 24, 27]).concat([
+            new Gamepiece(18, [11, 2], 'white'),
+            new Gamepiece(15, [-1, -1], 'black'),
+            new Gamepiece(7,  [7, -1], 'black')
+        ]));
+
+        $('#demo-movement').append(board1.html);
+        $('#demo-capture').append(board2.html);
+        $('#demo-jump').append(board3.html);
+    });
+</script>
+
+<!--Button functionality for accordion menu-->
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+			panel.style.display = "block";
+		}
+    });
+}
+</script>
+
+
+</body>
+</html>
